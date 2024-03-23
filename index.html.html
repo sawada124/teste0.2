@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>teste</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .container {
+      height: 2000px; /* Altura suficiente para rolar */
+    }
+
+    .animation {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <h1>teste</h1>
+  
+  <video controls>
+    <source src="https://drive.google.com/uc?export=download&id=1gD1afg3yBXdj7zD5UMG_DUUAO9AXkDs3" type="video/mp4">
+  </video>
+
+  <div class="container">
+    <div class="animation"></div>
+  </div>
+  
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var animation = document.querySelector(".animation");
+
+      window.addEventListener("scroll", function() {
+        var scrollPosition = window.scrollY;
+        var windowHeight = window.innerHeight;
+
+        // Defina a posição inicial e final para a animação
+        var startPosition = 500; // Posição inicial do scroll para iniciar a animação
+        var endPosition = 1000; // Posição final do scroll para completar a animação
+
+        if (scrollPosition >= startPosition && scrollPosition <= endPosition) {
+          // Calcula a porcentagem de progresso da animação
+          var progress = (scrollPosition - startPosition) / (endPosition - startPosition);
+          
+          // Atualiza a opacidade da animação conforme o progresso
+          animation.style.opacity = progress;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

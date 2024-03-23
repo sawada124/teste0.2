@@ -1,0 +1,15 @@
+.container {
+  height: 2000px; /* Altura suficiente para rolar */
+}
+
+.animation {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
